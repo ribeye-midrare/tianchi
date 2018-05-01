@@ -1,0 +1,285 @@
+../data/train_20180408.csv  contains label count:  38199
+../data/test_a_20180409.csv  contains label count:  9538
+Data file contains key count:  57298
+----start to write test tf example------
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+-----wrote test examples. size:  9538
+Float feature 10004 contains non-float value .3.70
+Float feature 10004 contains non-float value 4.14.
+Float feature 192 contains non-float value 16.7.07
+Float feature 192 contains non-float value 12.01.
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value > 6.22
+label 血清甘油三酯 has non-float value > 6.22
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value > 6.22
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 收缩压 has non-float value 未查
+label 舒张压 has non-float value 未查
+label 血清甘油三酯 has non-float value 4.15+
+label 血清甘油三酯 has non-float value 4.46+
+label 收缩压 has non-float value 未查
+label 舒张压 has non-float value 未查
+label 血清甘油三酯 has non-float value 3.61+
+label 收缩压 has non-float value 未查
+label 舒张压 has non-float value 未查
+label 收缩压 has non-float value 弃查
+label 舒张压 has non-float value 弃查
+label 收缩压 has non-float value 弃查
+label 舒张压 has non-float value 弃查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 7.75轻度乳糜
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 2.45+
+label 血清甘油三酯 has non-float value 2.2.8
+label 血清甘油三酯 has non-float value 5.77+
+label 血清甘油三酯 has non-float value 5.02+
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 3.17+
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 2.23+
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 7.15+
+label 血清甘油三酯 has non-float value 4.64+
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 16.04++
+label 血清甘油三酯 has non-float value 2.78+
+label 收缩压 has non-float value 未查
+label 舒张压 has non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 8.62++
+label 血清甘油三酯 has non-float value 4.22+
+Float feature 1815 contains non-float value CLT1D
+label 血清甘油三酯 has non-float value 6.15++
+label 血清甘油三酯 has non-float value 2.48+
+label 血清甘油三酯 has non-float value 4.75+
+label 血清甘油三酯 has non-float value > 11.00
+label 血清甘油三酯 has non-float value 3.25+
+label 血清甘油三酯 has non-float value 4.09+
+label 血清甘油三酯 has non-float value 4.19+
+label 血清甘油三酯 has non-float value 2.46+
+label 血清甘油三酯 has non-float value 4.13+
+label 血清甘油三酯 has non-float value 4.34+
+label 血清甘油三酯 has non-float value 2.63+
+label 血清甘油三酯 has non-float value 3.36+
+label 血清甘油三酯 has non-float value 12.51++
+label 血清甘油三酯 has non-float value 3.81+
+label 血清甘油三酯 has non-float value 2.40+
+label 血清甘油三酯 has non-float value 3.96+
+label 血清甘油三酯 has non-float value 8.28+
+label 血清甘油三酯 has non-float value 9.14++
+Float feature 1850 contains non-float value 3。89
+label 血清甘油三酯 has non-float value 17.60++
+label 收缩压 has non-float value 未查
+label 舒张压 has non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 5.53+
+Float feature 2403 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+label 血清甘油三酯 has non-float value 6.47++
+label 血清甘油三酯 has non-float value 4.57+
+Float feature 191 contains non-float value 降脂后复查
+label 血清甘油三酯 has non-float value 3.64+
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+Float feature 2403 contains non-float value 未查
+Float feature 2405 contains non-float value 未查
+Float feature 2404 contains non-float value 未查
+-----start to write training/eval examples---------
+---wrote 30559 train examples and 7640 eval examples
