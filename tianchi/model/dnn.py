@@ -6,6 +6,7 @@ from __future__ import division
 from __future__ import print_function
 from google.protobuf import text_format
 
+import feature as f
 import tensorflow as tf
 
 train_filename = '../data/v1/train.tfrecords'
@@ -13,30 +14,9 @@ eval_filename  = '../data/v1/eval.tfrecords'
 test_filename  = '../data/v1/test.tfrecords'
 
 model_dir = 'model/v1/'
-vocab_dir = '../data/feature_set/'
 train_steps = 60000 # 60k steps
 batch_size = 128
 label_key_ = 'ganyousanzhi'
-
-def build_feature_columns():
-  float_features  = {'1814', '1815', '1850', '190', '191', '192', '2403', '2404', '2405', '10004'}
-  sparse_features = {'2302', '1840', '3190', '3191', '3192', '3193', '3195', '3196', '3197',
-                     '3429', '3430', '3730', '300005', '0407', '0420', '0421', '0423', '0426', '0430',
-                     '0431', '0901', '100010'}
-  feature_columns = []
-
-  for sparse_feature in sparse_features:
-    categorical_feature = tf.feature_column.categorical_column_with_vocabulary_file(
-      sparse_feature,
-      vocab_dir + sparse_feature,
-      num_oov_buckets=5,
-      dtype=tf.string)
-    feature_columns.append(tf.feature_column.embedding_column(categorical_feature, 16))
-
-  # for float_feature in float_features:
-  #   feature_columns.append(tf.feature_column.numeric_column(float_feature))
-
-  return feature_columns
 
 
 def main(argv):
@@ -44,7 +24,7 @@ def main(argv):
 
   def input_train(eval = False):
     data_files = eval_filename if eval else train_filename
-    feature_columns = build_feature_columns()
+    feature_columns = f.build_feature_columns()
     feature_spec = tf.estimator.classifier_parse_example_spec(
         feature_columns, label_key=label_key_, label_dtype=tf.float32)
     dataset = tf.contrib.data.make_batched_features_dataset(
@@ -58,7 +38,7 @@ def main(argv):
     return batch_features, label
 
   def input_pred():
-    feature_columns = build_feature_columns()
+    feature_columns = f.build_feature_columns()
     feature_spec = tf.estimator.classifier_parse_example_spec(
         feature_columns, label_key=label_key_, label_dtype=tf.float32)
     dataset = tf.contrib.data.make_batched_features_dataset(
@@ -76,7 +56,7 @@ def main(argv):
     optimizer=tf.train.ProximalAdagradOptimizer(
       learning_rate=0.01,
       l1_regularization_strength=0.001),
-    feature_columns=build_feature_columns(),
+    feature_columns=f.build_feature_columns(),
     model_dir=model_dir + label_key_,
     label_dimension=1,
     dropout=0.5)
