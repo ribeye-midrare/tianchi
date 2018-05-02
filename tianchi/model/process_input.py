@@ -38,7 +38,7 @@ def build_example(vid, features, labels):
       stripped_value = features[feature_name].strip()
       if stripped_value:
         try:
-          f_value = float(stripped_value)
+          f_value = float(stripped_value.replace(' ', ''))
           feature[feature_name] = _float_feature(f_value)
         except ValueError:
           print('Float feature {} contains non-float value {}'.format(feature_name, stripped_value))
