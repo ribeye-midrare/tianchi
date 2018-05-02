@@ -5,7 +5,7 @@ import csv
 import tensorflow as tf
 
 tfrecord_file = '../data/v1/test.tfrecords'
-csv_file       = '../data/v1/submission.csv'
+csv_file       = '../data/v2/submission.csv'
 fields_to_inc  = 'vid,shousuoya,shuzhangya,ganyousanzhi,gaomiduzhidanbai,dimiduzhidanbai'
 
 def get_feature_value(example, key):
