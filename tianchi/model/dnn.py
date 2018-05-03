@@ -7,6 +7,7 @@ from __future__ import print_function
 from google.protobuf import text_format
 
 import feature as f
+import hparams as hp
 import tensorflow as tf
 import time
 
@@ -15,10 +16,6 @@ eval_filename  = '../data/v1/eval.tfrecords'
 test_filename  = '../data/v1/test.tfrecords'
 
 model_dir = 'model/'
-model_version = '/v2.2/'  # model_dir/label/version/
-train_steps = 10000 # 60k steps
-batch_size = 128
-label_key_ = 'shousuoya'
 
 
 def main(argv):
@@ -31,25 +28,25 @@ def main(argv):
     data_files = eval_filename if eval else train_filename
     feature_columns = f.build_feature_columns()
     feature_spec = tf.estimator.classifier_parse_example_spec(
-        feature_columns, label_key=label_key_, label_dtype=tf.float32)
+        feature_columns, label_key=hp.label_key_, label_dtype=tf.float32)
     dataset = tf.contrib.data.make_batched_features_dataset(
         data_files,
-        batch_size,
+        hp.batch_size,
         feature_spec,
         num_epochs=1 if eval else None,
     )
 
     batch_features = dataset.make_one_shot_iterator().get_next()
-    label = batch_features.pop(label_key_)
+    label = batch_features.pop(hp.label_key_)
     return batch_features, label
 
   def input_pred():
     feature_columns = f.build_feature_columns()
     feature_spec = tf.estimator.classifier_parse_example_spec(
-        feature_columns, label_key=label_key_, label_dtype=tf.float32)
+        feature_columns, label_key=hp.label_key_, label_dtype=tf.float32)
     dataset = tf.contrib.data.make_batched_features_dataset(
         test_filename,
-        batch_size,
+        hp.batch_size,
         feature_spec,
         shuffle=False,
         num_epochs=1,
@@ -59,20 +56,20 @@ def main(argv):
 
   model_config = tf.estimator.RunConfig(
     keep_checkpoint_max=3,
-    save_checkpoints_steps=300,
-    model_dir=model_dir + label_key_ + model_version)
+    save_checkpoints_steps=hp.save_checkpoints_steps,
+    model_dir=model_dir + hp.label_key_ + hp.model_version)
 
   model = tf.estimator.DNNRegressor(
-    hidden_units=[256, 128, 64],
+    hidden_units=hp.hidden_units,
     optimizer=tf.train.ProximalAdagradOptimizer(
-      learning_rate=0.01,
-      l1_regularization_strength=0.005),
+      learning_rate=hp.learning_rate,
+      l1_regularization_strength=hp.l1_regularization_strength),
     feature_columns=f.build_feature_columns(),
     label_dimension=1,
     dropout=0.5,
     config=model_config)
 
-  train_spec = tf.estimator.TrainSpec(input_fn=input_train, max_steps=train_steps)
+  train_spec = tf.estimator.TrainSpec(input_fn=input_train, max_steps=hp.train_steps)
   eval_spec = tf.estimator.EvalSpec(input_fn=lambda: input_train(True))
 
   if eval_only:
@@ -99,8 +96,8 @@ def main(argv):
         example = tf.train.Example()
         example.ParseFromString(str_example)
         feature = example.features.feature
-        del feature[label_key_].bytes_list.value[:]
-        feature[label_key_].float_list.value.append(scores[idx])
+        del feature[hp.label_key_].bytes_list.value[:]
+        feature[hp.label_key_].float_list.value.append(scores[idx])
         output.append(example)
 
     print('-----start to write result examples---------')
