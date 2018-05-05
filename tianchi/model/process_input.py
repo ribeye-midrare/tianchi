@@ -6,9 +6,9 @@ import codecs
 import csv
 import tensorflow as tf
 
-train_filename = '../data/v1/train.tfrecords'
-eval_filename  = '../data/v1/eval.tfrecords'
-test_filename  = '../data/v1/test.tfrecords'
+train_filename = '../data/v3/train.tfrecords'
+eval_filename  = '../data/v3/eval.tfrecords'
+test_filename  = '../data/v3/test.tfrecords'
 feature_dir    = '../data/feature_set/'
 
 raw_feature_file1 = '../data/data_part1_20180408.txt'
@@ -21,6 +21,7 @@ float_features  = {'1814', '1815', '1850', '190', '191', '192', '2403', '2404', 
 sparse_features = {'2302', '1840', '3190', '3191', '3192', '3193', '3195', '3196', '3197',
                    '3429', '3430', '3730', '300005', '0407', '0420', '0421', '0423', '0426', '0430',
                    '0431', '0901', '100010'}
+nlp_features    = {'0102'}
 
 
 def _string_feature(value):
@@ -29,9 +30,29 @@ def _string_feature(value):
 def _float_feature(value):
   return tf.train.Feature(float_list=tf.train.FloatList(value=[value]))
 
+def _str_list_feature(values):
+  """Input is an string array."""
+  bytelist = [bytes(x, "utf-8") for x in values]
+  return tf.train.Feature(bytes_list=tf.train.BytesList(value=bytelist))
+
+def _extract_salient_terms(feature_name, raw_value):
+  """From a string paragraph and a given salient term candidates, extract all salient terms
+     showing in the string paragraph.  If none, we'll use 'normal'.
+  """
+  vocabs = []
+  salient_file = feature_dir + feature_name + '.salient'
+  with open(salient_file) as f:
+    content = f.readlines()
+    vocabs = [x.strip() for x in content] 
+
+  salient_terms = []
+  for vocab in vocabs:
+    if raw_value.find(vocab) > -1:
+      salient_terms.append(vocab)
+
+  return ['normal'] if (len(salient_terms) < 1) else salient_terms
+
 def build_example(vid, features, labels):
-  # create the tfExample proto with features and labels
-  # .strip()
   feature = {}
   for feature_name in float_features:
     if feature_name in features:
@@ -49,6 +70,11 @@ def build_example(vid, features, labels):
       if stripped_value:
         feature[feature_name] = _string_feature(stripped_value)
 
+  for feature_name in nlp_features:
+    if feature_name in features:
+      salient_terms = _extract_salient_terms(feature_name, features[feature_name])
+      feature[feature_name] = _str_list_feature(salient_terms)
+
   for label, value in labels.items():
     if label != 'vid':
       if not value:
@@ -58,7 +84,6 @@ def build_example(vid, features, labels):
           f_value = float(value.strip())
           feature[label] = _float_feature(f_value)
         except ValueError:
-          # do not allow bad labels
           print('label {} has non-float value {}'.format(label, value))
           return None
 
