@@ -25,6 +25,7 @@ def _build_dense_features():
     nm_column = tf.feature_column.numeric_column(feature_name, default_value=0.0)
     boundary = boundaries[feature_name]
     bucketized_feature.append(tf.feature_column.bucketized_column(nm_column, boundary))
+    #bucketized_feature.append(nm_column)
 
   return bucketized_feature
 
@@ -38,14 +39,30 @@ def _build_sparse_features():
     categorical_feature = tf.feature_column.categorical_column_with_vocabulary_file(
       sparse_feature,
       vocab_dir + sparse_feature,
-      num_oov_buckets=5,
+      num_oov_buckets=2,
       dtype=tf.string)
-    feature_columns.append(tf.feature_column.embedding_column(categorical_feature, 16))
+    feature_columns.append(tf.feature_column.embedding_column(categorical_feature, 8))
 
   # for float_feature in float_features:
   #   feature_columns.append(tf.feature_column.numeric_column(float_feature))
 
   return feature_columns
 
+def _build_nlp_features():
+  """For NLP features, we first extract all salient terms, and then build a BOW representation
+     using the vocab.salient as vocab.  Note there's no OOV needed --- we always use 'normal' as
+     fallback.
+  """
+  feature_columns = []
+  nlp_features = ['0102']
+  for nlp_feature in nlp_features:
+    categorical_feature = tf.feature_column.categorical_column_with_vocabulary_file(
+      nlp_feature,
+      vocab_dir + nlp_feature + '.salient',
+      num_oov_buckets=2,
+      dtype=tf.string)
+    feature_columns.append(tf.feature_column.embedding_column(categorical_feature, 4))
+  return feature_columns
+
 def build_feature_columns():
-  return _build_sparse_features() + _build_dense_features()
+  return _build_sparse_features() + _build_dense_features() + _build_nlp_features()
